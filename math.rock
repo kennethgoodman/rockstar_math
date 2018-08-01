@@ -1,0 +1,110 @@
+Factorial takes the number
+Put 0 into the zero
+If the number is the zero
+Give back 1
+
+If the number is less than the zero
+Give back -1
+
+  
+Put 1 into the iterator
+Put 1 into the answer
+While the iterator is as little as the number
+Put the iterator of the answer into the answer
+Build the iterator up
+
+Give back the answer
+
+
+
+Absolute Value takes The number
+If The number is less than 0
+Put The number times -1 into The number 
+Give back The number
+
+Give back The number
+
+
+Exp Estimate takes The x and The Number Of Terms
+Put 0 into The Iterator 
+Put 0 into The Answer
+While The Iterator is as little as The Number Of Terms
+Put Factorial taking The Iterator into the bottom
+Put The x over the bottom into The Term 
+Put The Answer plus The Term into The Answer
+Build The Iterator up
+
+Give back The Answer
+
+Put 1 into the x
+Put 50 into the terms
+Put Exp Estimate taking the x, the terms into the e 
+
+
+
+Mod takes the number and the modulo
+If the number is greater than 0
+While the number is as great as the modulo
+Put the number minus the modulo into the number
+
+Give back the number
+
+If the number is less than 0
+While the number is less than 0
+Put the number plus the modulo into the number
+
+Give back the number
+
+Give back the number
+
+Power takes the number and the exponent
+If the exponent is 0
+Give back 1
+
+Put 1 into the iterator
+Put the number into the answer
+While the iterator is smaller than the exponent  (Probably can also use divide and conquer exponentiation -> e^n + e^m + ....)
+Put the number times the answer into the answer
+Build the iterator up
+
+Give back the answer
+
+
+Exp takes the x
+Give back Power taking the e, the x 
+
+
+
+LN takes the number
+Put the number minus 1 into the top
+Put the number plus 1 into the bottom
+Put the top over the bottom into the x
+Put 1 into the iterator 
+Put 0 into the sum
+While the iterator is less than 2000
+Put Power taking the x, the iterator into the term
+Put the term over the iterator into the term
+Put the sum plus the term into the sum
+Build the iterator up
+Build the iterator up
+
+Put the sum times 2 into the sum
+Give back the sum
+
+
+LOG takes the number and the base
+Put LN taking the number into the top
+Put LN taking the base into the bottom
+Give back the top over the bottom
+
+
+Square Root takes the number
+Put 0.5 times the number into the approximation
+Put 1 into the iterator
+Put 1.0 * the number into the number
+While the iterator is less than 50
+Put the number over the approximation plus the approximation into the term
+Put 0.5 * the term into the approximation
+Build the iterator up
+
+Give back the approximation
