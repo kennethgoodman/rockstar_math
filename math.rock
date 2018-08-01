@@ -37,6 +37,7 @@ Build The Iterator up
 
 Give back The Answer
 
+(Create variable: e)
 Put 1 into the x
 Put 50 into the terms
 Put Exp Estimate taking the x, the terms into the e 
