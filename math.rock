@@ -1,3 +1,4 @@
+(Factorial: n!)
 Factorial takes the number
 Put 0 into the zero
 If the number is the zero
@@ -16,7 +17,7 @@ Build the iterator up
 Give back the answer
 
 
-
+(Abs value)
 Absolute Value takes The number
 If The number is less than 0
 Put The number times -1 into The number 
@@ -24,7 +25,7 @@ Give back The number
 
 Give back The number
 
-
+(Exp Estimate: estimate e^x, x close to 1)
 Exp Estimate takes The x and The Number Of Terms
 Put 0 into The Iterator 
 Put 0 into The Answer
@@ -41,7 +42,7 @@ Put 50 into the terms
 Put Exp Estimate taking the x, the terms into the e 
 
 
-
+(Mod: a % m)
 Mod takes the number and the modulo
 If the number is greater than 0
 While the number is as great as the modulo
@@ -57,6 +58,7 @@ Give back the number
 
 Give back the number
 
+(Power: a^x)
 Power takes the number and the exponent
 If the exponent is 0
 Give back 1
@@ -74,7 +76,7 @@ Exp takes the x
 Give back Power taking the e, the x 
 
 
-
+(Natural Logarithm, always base e)
 LN takes the number
 Put the number minus 1 into the top
 Put the number plus 1 into the bottom
@@ -91,20 +93,20 @@ Build the iterator up
 Put the sum times 2 into the sum
 Give back the sum
 
-
+(Log with number and base)
 LOG takes the number and the base
 Put LN taking the number into the top
 Put LN taking the base into the bottom
 Give back the top over the bottom
 
-
+(Square Root Function)
 Square Root takes the number
 Put 0.5 times the number into the approximation
 Put 1 into the iterator
-Put 1.0 * the number into the number
+Put 1.0 times the number into the number
 While the iterator is less than 50
 Put the number over the approximation plus the approximation into the term
-Put 0.5 * the term into the approximation
+Put 0.5 times the term into the approximation
 Build the iterator up
 
 Give back the approximation
