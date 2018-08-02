@@ -1,5 +1,5 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, Mod, LOG as rocklog, Exp
-from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, Mod, LOG as rocklog, Exp, Sine, Cos
+from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, sin, pi, cos
 import math
 
 def run_factorial_test():
@@ -59,6 +59,21 @@ def run_mod_test():
             print("testing {} % {}".format(x,m))
             assert_close(x % m, Mod(x,m), "Failed for {} % {}".format(x,m))
 
+def run_sine_test():
+    for x in range(8):
+        print("Doing sin({} * pi / 8)".format(x))
+        x *= pi / 8
+        assert_close( sin(x), Sine(x), "Sin({})".format(x))
+
+def run_cos_test():
+    for x in range(-8,9):    
+        print("Doing cos({} * pi / 8)".format(x))
+        x *= pi / 8
+        assert_close( cos(x), Cos(x), "cos({})".format(x))
+
+def run_dec_to_bin_test():
+    pass  # not using until we have integer division
+
 def main():
     run_factorial_test()
     run_power_test()
@@ -68,6 +83,9 @@ def main():
     run_log_test()
     run_exponential_test()
     run_mod_test()
+    run_sine_test()
+    run_cos_test()
+    run_dec_to_bin_test()
 
 if __name__ == '__main__':
     main()

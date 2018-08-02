@@ -111,3 +111,53 @@ Put 0.5 times the term into the approximation
 Build the iterator up
 
 Give back the approximation
+
+
+(Sine)
+Sine takes the radian
+Put 1 into the iterator
+Put 0 into the answer
+Put 1 into the sign
+While the iterator is less than 26
+Put Power taking the radian, the iterator over Factorial taking the iterator into the term
+Put the term times the sign into the term
+Put the answer plus the term into the answer
+Build the iterator up
+Build the iterator up
+Put the sign times -1 into the sign
+
+Give back the answer
+
+
+(Cos)
+Cos takes the radian
+Put 0 into the iterator
+Put 0 into the answer
+Put 1 into the sign
+While the iterator is less than 26
+Put Power taking the radian, the iterator over Factorial taking the iterator into the term
+Put the term times the sign into the term
+Put the answer plus the term into the answer
+Build the iterator up
+Build the iterator up
+Put the sign times -1 into the sign
+
+Give back the answer
+
+
+(Get binary from decimal)
+DecToBin takes the number
+If the number is as little as 1
+If the number is 0
+Give back "0"
+
+Give back "1"
+
+Put Mod taking the number, 2 into the temp
+If the temp is 0
+Put "0" into the temp
+Else
+Put "1" into the temp
+
+Put the number over 2 into the number
+Give back the temp plus DecToBin taking the number  (doesn't work until we have integer division)
