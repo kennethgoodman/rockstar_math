@@ -59,6 +59,13 @@ Give back the number
 
 Give back the number
 
+
+(Floor)
+Floor takes the number
+Put the number minus Mod taking the number, 1 into the number
+Give back the number
+
+
 (Power: a^x)
 Power takes the number and the exponent
 If the exponent is 0
