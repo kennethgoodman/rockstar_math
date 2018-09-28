@@ -159,6 +159,45 @@ Put the sign times -1 into the sign
 Give back the answer
 
 
+(TanCoeff, auxiliary function)
+TanCoeff takes the number
+If the number is 0
+Give back 1
+
+Put 0 into the answer
+Put 0 into the iterator
+Put the number over 2 into the halfofnumber
+Put Floor taking the halfofnumber into the halfofnumber
+While the iterator is less than the halfofnumber minus 1
+Put TanCoeff taking the iterator into the firstterm
+Put the number minus the iterator minus 1 into the antiiterator
+Put TanCoeff taking the antiiterator into the secondterm
+Put 2 times the firstterm times the secondterm into the term
+Put the answer plus the term into the answer
+Build the iterator up
+
+If Mod taking the number, 2 is 1
+Put TanCoeff taking the halfofnumber into the term
+Put the answer plus Power taking the term, 2 into the answer
+
+Give back the answer
+
+
+(Tan)
+Tan takes the radian
+Put 0 into the iterator
+Put 0 into the answer
+While the iterator is less than 26
+Put Tan_Coeff taking the iterator into the coefficient
+Put 2 times the iterator into the exponent
+Put 1 plus the exponent into the exponent
+Put the coefficient times Power taking the radian, the exponent into the term
+Put the answer plus the term into the answer
+Build the iterator up
+
+Give back the answer
+
+
 (Get binary from decimal)
 DecToBin takes the number
 If the number is as little as 1
