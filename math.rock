@@ -7,7 +7,7 @@ Give back 1
 If the number is less than the zero
 Give back -1
 
-  
+
 Put 1 into the iterator
 Put 1 into the answer
 While the iterator is as little as the number
@@ -20,18 +20,18 @@ Give back the answer
 (Abs value)
 Absolute Value takes The number
 If The number is less than 0
-Put The number times -1 into The number 
+Put The number times -1 into The number
 Give back The number
 
 Give back The number
 
 (Exp Estimate: estimate e^x, x close to 1)
 Exp Estimate takes The x and The Number Of Terms
-Put 0 into The Iterator 
+Put 0 into The Iterator
 Put 0 into The Answer
 While The Iterator is as little as The Number Of Terms
 Put Factorial taking The Iterator into the bottom
-Put The x over the bottom into The Term 
+Put The x over the bottom into The Term
 Put The Answer plus The Term into The Answer
 Build The Iterator up
 
@@ -40,7 +40,7 @@ Give back The Answer
 (Create variable: e)
 Put 1 into the x
 Put 50 into the terms
-Put Exp Estimate taking the x, the terms into the e 
+Put Exp Estimate taking the x, the terms into the e
 
 
 (Mod: a % m)
@@ -59,6 +59,20 @@ Give back the number
 
 Give back the number
 
+
+(Floor)
+Floor takes the number
+Put the number minus Mod taking the number, 1 into the number
+Give back the number
+
+
+(Ceil)
+Ceil takes the number
+Put -1 times the number into the number
+Put -1 times Floor taking the number into the number
+Give back the number
+
+
 (Power: a^x)
 Power takes the number and the exponent
 If the exponent is 0
@@ -74,7 +88,7 @@ Give back the answer
 
 
 Exp takes the x
-Give back Power taking the e, the x 
+Give back Power taking the e, the x
 
 
 (Natural Logarithm, always base e)
@@ -82,7 +96,7 @@ LN takes the number
 Put the number minus 1 into the top
 Put the number plus 1 into the bottom
 Put the top over the bottom into the x
-Put 1 into the iterator 
+Put 1 into the iterator
 Put 0 into the sum
 While the iterator is less than 2000
 Put Power taking the x, the iterator into the term
@@ -141,6 +155,45 @@ Put the answer plus the term into the answer
 Build the iterator up
 Build the iterator up
 Put the sign times -1 into the sign
+
+Give back the answer
+
+
+(TanCoeff, auxiliary function)
+TanCoeff takes the number
+If the number is 0
+Give back 1
+
+Put 0 into the answer
+Put 0 into the iterator
+Put the number over 2 into the halfofnumber
+Put Floor taking the halfofnumber into the halfofnumber
+While the iterator is less than the halfofnumber minus 1
+Put TanCoeff taking the iterator into the firstterm
+Put the number minus the iterator minus 1 into the antiiterator
+Put TanCoeff taking the antiiterator into the secondterm
+Put 2 times the firstterm times the secondterm into the term
+Put the answer plus the term into the answer
+Build the iterator up
+
+If Mod taking the number, 2 is 1
+Put TanCoeff taking the halfofnumber into the term
+Put the answer plus Power taking the term, 2 into the answer
+
+Give back the answer
+
+
+(Tan)
+Tan takes the radian
+Put 0 into the iterator
+Put 0 into the answer
+While the iterator is less than 26
+Put Tan_Coeff taking the iterator into the coefficient
+Put 2 times the iterator into the exponent
+Put 1 plus the exponent into the exponent
+Put the coefficient times Power taking the radian, the exponent into the term
+Put the answer plus the term into the answer
+Build the iterator up
 
 Give back the answer
 
