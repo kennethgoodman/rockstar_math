@@ -1,3 +1,7 @@
+(Pi constant)
+Put 3.1415926535897932 into the pi
+
+
 (Factorial: n!)
 Factorial takes the number
 Put 0 into the zero
@@ -156,6 +160,13 @@ Build the iterator up
 Put the sign times -1 into the sign
 
 Give back the answer
+
+
+(Tan)
+Tan takes the radian
+Put Sine taking the radian into the numerator
+Put Cos taking the radian into the denominator
+Give back the numerator over the denominator
 
 
 (Get binary from decimal)
