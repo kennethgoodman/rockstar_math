@@ -1,5 +1,5 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, Mod, LOG as rocklog, Exp, Sine, Cos
-from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, sin, pi, cos
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, Mod, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos
+from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, cos
 import math
 
 def run_factorial_test():
@@ -45,8 +45,17 @@ def run_log_test():
     for x in range(1, 10):
         for b in range(2, 5):
             print("testing log_{}({})".format(b,x))
-            assert_close(pyln(x,b), rocklog(x, b), "Failed for log_{}({})".format(b,x))
+            assert_close(pyln(x,b), rocklog(x, b),"Failed for log_{}({})".format(b,x))
 
+def run_floor_test():
+    for x in [-2.99, -2.5, -1, 0, -0.0, 2, 4.001, 4.999]:
+        print("testing floor({})".format(x))
+        assert_close(floor(x), Floor(x), "Failed for floor({})".format(x))
+
+def run_ceil_test():
+    for x in [-2.99, -2.5, -1, 0, -0.0, 2, 4.001, 4.999]:
+        print("testing ceil({})".format(x))
+        assert_close(ceil(x), Ceil(x), "Failed for ceil({})".format(x))
 
 def run_exponential_test():
     for x in range(10):
@@ -81,6 +90,8 @@ def main():
     run_sqrt_test()
     run_abs_test()
     run_log_test()
+    run_floor_test()
+    run_ceil_test()
     run_exponential_test()
     run_mod_test()
     run_sine_test()
