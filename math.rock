@@ -11,7 +11,6 @@ Give back 1
 If the number is less than the zero
 Give back -1
 
-  
 Put 1 into the iterator
 Put 1 into the answer
 While the iterator is as little as the number
@@ -62,6 +61,20 @@ Put the number plus the modulo into the number
 Give back the number
 
 Give back the number
+
+
+(Floor)
+Floor takes the number
+Put the number minus Mod taking the number, 1 into the number
+Give back the number
+
+
+(Ceil)
+Ceil takes the number
+Put -1 times the number into the number
+Put -1 times Floor taking the number into the number
+Give back the number
+
 
 (Power: a^x)
 Power takes the number and the exponent
