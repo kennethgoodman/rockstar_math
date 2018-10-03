@@ -149,6 +149,13 @@ Put the sign times -1 into the sign
 Give back the answer
 
 
+(Tan)
+Tan takes the radian
+Put Sine taking the radian into the numerator
+Put Cos taking the radian into the denominator
+Give back the numerator over the denominator
+
+
 (Get binary from decimal)
 DecToBin takes the number
 If the number is as little as 1
