@@ -1,4 +1,4 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, Mod, LOG as rocklog, Exp, Sine, Cos
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, Mod, LOG as rocklog, Exp, Sine, Cos
 from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, sin, pi, cos
 import math
 
@@ -41,6 +41,10 @@ def run_abs_test():
 def run_e_test():
     assert_closer(math.e, the_e, "Approximation of e")
 
+def run_pi_test():
+    assert_close(pi, the_pi, "Approximation of pi")
+    assert_close(pi/2, the_pi/2, "Approximation of half pi")
+
 def run_log_test():
     for x in range(1, 10):
         for b in range(2, 5):
@@ -80,6 +84,7 @@ def main():
     run_ln_test()
     run_sqrt_test()
     run_abs_test()
+    run_pi_test()
     run_log_test()
     run_exponential_test()
     run_mod_test()

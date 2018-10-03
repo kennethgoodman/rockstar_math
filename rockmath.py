@@ -1,3 +1,5 @@
+ #Pi constant
+the_pi = 3.1415926535897932
  #Factorial: n!
 def Factorial(the_number):
     the_zero = 0
