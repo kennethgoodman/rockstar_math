@@ -1,5 +1,5 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, Mod, LOG as rocklog, Exp, Sine, Cos
-from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, sin, pi, cos
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, Mod, LOG as rocklog, Exp, Sine, Cos, Arctan
+from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, sin, pi, cos, atan
 import math
 
 def run_factorial_test():
@@ -71,6 +71,12 @@ def run_cos_test():
         x *= pi / 8
         assert_close( cos(x), Cos(x), "cos({})".format(x))
 
+def run_arctan_test():
+    for x in range(-9,10):
+        x/=10
+        print("Doing arctan({})".format(x))
+        assert_close( atan(x), Arctan(x), "arctan({})".format(x))
+
 def run_dec_to_bin_test():
     pass  # not using until we have integer division
 
@@ -85,6 +91,7 @@ def main():
     run_mod_test()
     run_sine_test()
     run_cos_test()
+    run_arctan_test()
     run_dec_to_bin_test()
 
 if __name__ == '__main__':

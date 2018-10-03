@@ -145,6 +145,22 @@ Put the sign times -1 into the sign
 Give back the answer
 
 
+(Arctan)
+Arctan takes the number
+Put 1 into the iterator
+Put 0 into the answer
+Put 1 into the sign
+While the iterator is less than 200
+Put Power taking the number, the iterator over the iterator into the term
+Put the term times the sign into the term
+Put the answer plus the term into the answer
+Build the iterator up
+Build the iterator up
+Put the sign times -1 into the sign
+
+Give back the answer
+
+
 (Get binary from decimal)
 DecToBin takes the number
 If the number is as little as 1

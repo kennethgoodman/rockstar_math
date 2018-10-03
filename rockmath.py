@@ -111,6 +111,19 @@ def Cos(the_radian):
         the_iterator += 1
         the_sign = the_sign * -1
     return the_answer
+ #Arctan
+def Arctan(the_number):
+    the_iterator = 1
+    the_answer = 0
+    the_sign = 1
+    while the_iterator < 200:
+        the_term = Power(the_number, the_iterator) / the_iterator
+        the_term = the_term * the_sign
+        the_answer = the_answer + the_term
+        the_iterator += 1
+        the_iterator += 1
+        the_sign = the_sign * -1
+    return the_answer
  #Get binary from decimal
 def DecToBin(the_number):
     if the_number <= 1:
