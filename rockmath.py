@@ -1,3 +1,5 @@
+ #Pi constant
+the_pi = 3.1415926535897932
  #Factorial: n!
 def Factorial(the_number):
     the_zero = 0
@@ -123,6 +125,29 @@ def Arctan(the_number):
         the_iterator += 1
         the_iterator += 1
         the_sign = the_sign * -1
+    return the_answer
+ #Arcsin
+def Arcsin(the_number):
+    the_iterator = 0
+    the_answer = 0
+    while the_iterator < 80:
+        the_placeholder = 2 * the_iterator
+        the_numerator = Factorial(the_placeholder)
+        the_exponent = 2 * the_iterator + 1
+        the_numerator = the_numerator * Power(the_number, the_exponent)
+        the_firstdenominator = Power(4, the_iterator)
+        the_placeholder = Factorial(the_iterator)
+        the_seconddenominator = Power(the_placeholder, 2)
+        the_thirddenominator = 2 * the_iterator + 1
+        the_denominator = the_firstdenominator * the_seconddenominator * the_thirddenominator
+        the_term = the_numerator / the_denominator
+        the_answer = the_answer + the_term
+        the_iterator += 1
+    return the_answer
+ #Arccos
+def Arccos(the_number):
+    the_answer = the_pi / 2
+    the_answer = the_answer - Arcsin(the_number)
     return the_answer
  #Get binary from decimal
 def DecToBin(the_number):

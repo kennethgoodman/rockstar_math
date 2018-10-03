@@ -1,3 +1,7 @@
+(Pi constant)
+Put 3.1415926535897932 into the pi
+
+
 (Factorial: n!)
 Factorial takes the number
 Put 0 into the zero
@@ -158,6 +162,34 @@ Build the iterator up
 Build the iterator up
 Put the sign times -1 into the sign
 
+Give back the answer
+
+
+(Arcsin)
+Arcsin takes the number
+Put 0 into the iterator
+Put 0 into the answer
+While the iterator is less than 80
+Put 2 times the iterator into the placeholder
+Put Factorial taking the placeholder into the numerator
+Put 2 times the iterator plus 1 into the exponent
+Put the numerator times Power taking the number, the exponent into the numerator
+Put Power taking 4, the iterator into the firstdenominator
+Put Factorial taking the iterator into the placeholder
+Put Power taking the placeholder, 2 into the seconddenominator
+Put 2 times the iterator plus 1 into the thirddenominator
+Put the firstdenominator times the seconddenominator times the thirddenominator into the denominator
+Put the numerator over the denominator into the term
+Put the answer plus the term into the answer
+Build the iterator up
+
+Give back the answer
+
+
+(Arccos)
+Arccos takes the number
+Put the pi over 2 into the answer
+Put the answer minus Arcsin taking the number into the answer
 Give back the answer
 
 
