@@ -162,6 +162,13 @@ Put the sign times -1 into the sign
 Give back the answer
 
 
+(Tan)
+Tan takes the radian
+Put Sine taking the radian into the numerator
+Put Cos taking the radian into the denominator
+Give back the numerator over the denominator
+
+
 (Arctan)
 Arctan takes the number
 Put 1 into the iterator

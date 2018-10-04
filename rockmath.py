@@ -113,6 +113,11 @@ def Cos(the_radian):
         the_iterator += 1
         the_sign = the_sign * -1
     return the_answer
+ #Tan
+def Tan(the_radian):
+    the_numerator = Sine(the_radian)
+    the_denominator = Cos(the_radian)
+    return the_numerator / the_denominator
  #Arctan
 def Arctan(the_number):
     the_iterator = 1
