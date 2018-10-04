@@ -1,6 +1,5 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, Mod, LOG as rocklog, Exp, Sine, Cos, Tan
-from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, cos, tan
-
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, Mod, LOG as rocklog, Exp, Sine, Cos, Tan, Arctan, Arcsin, Arccos
+from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, cos, tan, atan, asin, acos
 import math
 
 def run_factorial_test():
@@ -90,6 +89,24 @@ def run_tan_test():
         print("Doing tan({} * pi / 2)".format(x))
         x *= pi / 16
         assert_close( tan(x), Tan(x), "tan({})".format(x))
+        
+def run_arctan_test():
+    for x in range(-9,10):
+        x/=10
+        print("Doing arctan({})".format(x))
+        assert_close( atan(x), Arctan(x), "arctan({})".format(x))
+
+def run_arcsin_test():
+    for x in range(-9,10):
+        x/=10
+        print("Doing arcsin({})".format(x))
+        assert_close( asin(x), Arcsin(x), "arcsin({})".format(x))
+
+def run_arccos_test():
+    for x in range(-9,10):
+        x/=10
+        print("Doing arccos({})".format(x))
+        assert_close( acos(x), Arccos(x), "arccos({})".format(x))
 
 def run_dec_to_bin_test():
     pass  # not using until we have integer division
@@ -109,6 +126,9 @@ def main():
     run_sine_test()
     run_cos_test()
     run_tan_test()
+    run_arcsin_test()
+    run_arccos_test()
+    run_arctan_test()
     run_dec_to_bin_test()
 
 if __name__ == '__main__':
