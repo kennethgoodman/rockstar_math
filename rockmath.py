@@ -163,6 +163,15 @@ def Arccos(the_number):
     the_answer = the_answer - Arcsin(the_number)
     return the_answer
  #Sinh
+def Sinh(the_number):
+    the_iterator = 1
+    the_answer = 0
+    while the_iterator < 26:
+        the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
+        the_answer = the_answer + the_term
+        the_iterator += 1
+        the_iterator += 1
+    return the_answer
  #Cosh
  #Tanh
  #Arcsinh
