@@ -240,6 +240,10 @@ Give back the answer
 
 
 (Tanh)
+Tanh takes the number
+Put Sinh taking the number into the numerator
+Put Cosh taking the number into the denominator
+Give back the numerator over the denominator
 
 
 (Arcsinh)

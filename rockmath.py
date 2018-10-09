@@ -183,6 +183,10 @@ def Cosh(the_number):
         the_iterator += 1
     return the_answer
  #Tanh
+def Tanh(the_number):
+    the_numerator = Sinh(the_number)
+    the_denominator = Cosh(the_number)
+    return the_numerator / the_denominator
  #Arcsinh
  #Arccosh
  #Arctanh
