@@ -7,7 +7,6 @@ def Factorial(the_number):
         return 1
     if the_number < the_zero:
         return -1
-    
     the_iterator = 1
     the_answer = 1
     while the_iterator <= the_number:
@@ -44,6 +43,15 @@ def Mod(the_number, the_modulo):
         while the_number < 0:
             the_number = the_number + the_modulo
         return the_number
+    return the_number
+ #Floor
+def Floor(the_number):
+    the_number = the_number - Mod(the_number, 1)
+    return the_number
+ #Ceil
+def Ceil(the_number):
+    the_number = -1 * the_number
+    the_number = -1 * Floor(the_number)
     return the_number
  #Power: a^x
 def Power(the_number, the_exponent):
