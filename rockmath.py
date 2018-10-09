@@ -173,6 +173,15 @@ def Sinh(the_number):
         the_iterator += 1
     return the_answer
  #Cosh
+def Cosh(the_number):
+    the_iterator = 0
+    the_answer = 0
+    while the_iterator < 26:
+        the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
+        the_answer = the_answer + the_term
+        the_iterator += 1
+        the_iterator += 1
+    return the_answer
  #Tanh
  #Arcsinh
  #Arccosh

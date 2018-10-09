@@ -227,6 +227,16 @@ Give back the answer
 
 
 (Cosh)
+Cosh takes the number
+Put 0 into the iterator
+Put 0 into the answer
+While the iterator is less than 26
+Put Power taking the number, the iterator over Factorial taking the iterator into the term
+Put the answer plus the term into the answer
+Build the iterator up
+Build the iterator up
+
+Give back the answer
 
 
 (Tanh)
