@@ -253,6 +253,17 @@ Give back the numerator over the denominator
 
 
 (Arctanh)
+Arctanh takes the number
+Put 1 into the iterator
+Put 0 into the answer
+While the iterator is less than 30
+Put the iterator times Power taking the number, the iterator into the denominator
+Put 1 over the denominator into the term
+Put the term plus the answer into the answer
+Build the iterator up
+Build the iterator up
+
+Give back the answer
 
 
 (Get binary from decimal)
