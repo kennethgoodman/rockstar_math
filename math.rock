@@ -213,6 +213,24 @@ Put the answer minus Arcsin taking the number into the answer
 Give back the answer
 
 
+(Sinh)
+
+
+(Cosh)
+
+
+(Tanh)
+
+
+(Arcsinh)
+
+
+(Arccosh)
+
+
+(Arctanh)
+
+
 (Get binary from decimal)
 DecToBin takes the number
 If the number is as little as 1

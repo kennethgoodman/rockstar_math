@@ -162,6 +162,12 @@ def Arccos(the_number):
     the_answer = the_pi / 2
     the_answer = the_answer - Arcsin(the_number)
     return the_answer
+ #Sinh
+ #Cosh
+ #Tanh
+ #Arcsinh
+ #Arccosh
+ #Arctanh
  #Get binary from decimal
 def DecToBin(the_number):
     if the_number <= 1:
