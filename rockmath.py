@@ -1,5 +1,7 @@
  #Pi constant
 the_pi = 3.1415926535897932
+the_twopi = the_pi * 2
+the_halfpi = the_pi / 2
  #Factorial: n!
 def Factorial(the_number):
     the_zero = 0

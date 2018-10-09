@@ -1,5 +1,7 @@
 (Pi constant)
 Put 3.1415926535897932 into the pi
+Put the pi times 2 into the twopi
+Put the pi over 2 into the halfpi
 
 
 (Factorial: n!)
