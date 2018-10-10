@@ -1,5 +1,6 @@
  #Pi constant
 the_pi = 3.1415926535897932
+the_e = 2.7182818284590452
  #Factorial: n!
 def Factorial(the_number):
     the_zero = 0
@@ -19,20 +20,6 @@ def Absolute_Value(the_number):
         the_number = the_number * -1
         return the_number
     return the_number
- #Exp Estimate: estimate e^x, x close to 1
-def Exp_Estimate(the_x, The_Number_Of_Terms):
-    The_Iterator = 0
-    The_Answer = 0
-    while The_Iterator <= The_Number_Of_Terms:
-        the_bottom = Factorial(The_Iterator)
-        The_Term = the_x / the_bottom
-        The_Answer = The_Answer + The_Term
-        The_Iterator += 1
-    return The_Answer
- #Create variable: e
-the_x = 1
-the_terms = 50
-the_e = Exp_Estimate(the_x, the_terms)
  #Mod: a % m
 def Mod(the_number, the_modulo):
     if the_number > 0:

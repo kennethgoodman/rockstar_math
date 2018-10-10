@@ -1,5 +1,6 @@
 (Pi constant)
 Put 3.1415926535897932 into the pi
+Put 2.7182818284590452 into the e
 
 
 (Factorial: n!)
@@ -23,27 +24,10 @@ Give back the answer
 (Abs value)
 Absolute Value takes The number
 If The number is less than 0
-Put The number times -1 into The number 
+Put The number times -1 into The number
 Give back The number
 
 Give back The number
-
-(Exp Estimate: estimate e^x, x close to 1)
-Exp Estimate takes The x and The Number Of Terms
-Put 0 into The Iterator 
-Put 0 into The Answer
-While The Iterator is as little as The Number Of Terms
-Put Factorial taking The Iterator into the bottom
-Put The x over the bottom into The Term 
-Put The Answer plus The Term into The Answer
-Build The Iterator up
-
-Give back The Answer
-
-(Create variable: e)
-Put 1 into the x
-Put 50 into the terms
-Put Exp Estimate taking the x, the terms into the e 
 
 
 (Mod: a % m)
@@ -91,7 +75,7 @@ Give back the answer
 
 
 Exp takes the x
-Give back Power taking the e, the x 
+Give back Power taking the e, the x
 
 
 (Natural Logarithm, always base e)
@@ -99,7 +83,7 @@ LN takes the number
 Put the number minus 1 into the top
 Put the number plus 1 into the bottom
 Put the top over the bottom into the x
-Put 1 into the iterator 
+Put 1 into the iterator
 Put 0 into the sum
 While the iterator is less than 2000
 Put Power taking the x, the iterator into the term
