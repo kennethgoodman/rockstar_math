@@ -1,4 +1,4 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, the_twopi, the_halfpi, DegToRad, RadToDeg, Mod, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, the_tau, DegToRad, RadToDeg, Mod, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos
 from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, radians, degrees, cos, tan, atan, asin, acos
 import math
 
@@ -43,8 +43,7 @@ def run_e_test():
 
 def run_pi_test():
     assert_close(pi, the_pi, "Approximation of pi")
-    assert_close(pi*2, the_twopi, "Approximation of 2*pi")
-    assert_close(pi/2, the_halfpi, "Approximation of half pi")
+    assert_close(pi*2, the_tau, "Approximation of 2*pi")
 
 def run_degtorad_test():
     for x in [0, 1, 5, 45, 90, 360, 777, -0, -0.1, -75, -360, -1080]:
