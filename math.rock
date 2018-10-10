@@ -100,16 +100,25 @@ Put the number minus 1 into the top
 Put the number plus 1 into the bottom
 Put the top over the bottom into the x
 Put 1 into the iterator 
-Put 0 into the sum
-While the iterator is less than 2000
+Put 0 into the approximation
+While the iterator is less than 10 (get reasonable starting point for Halley's method)
 Put Power taking the x, the iterator into the term
 Put the term over the iterator into the term
-Put the sum plus the term into the sum
+Put the approximation plus the term into the approximation
 Build the iterator up
 Build the iterator up
 
-Put the sum times 2 into the sum
-Give back the sum
+Put the approximation times 2 into the approximation (end power expansion, start Halley's cubic convergence)
+Put 0 into the iterator
+While the iterator is less than 30
+Put the number minus Exp taking the approximation into the numerator
+Put the number plus Exp taking the approximation into the denominator
+Put 2 times the numerator over the denominator into the term
+Put the approximation plus the term into the approximation
+Build the iterator up
+
+Give back the approximation
+
 
 (Log with number and base)
 LOG takes the number and the base
