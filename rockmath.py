@@ -191,15 +191,10 @@ def Tanh(the_number):
  #Arccosh
  #Arctanh
 def Arctanh(the_number):
-    the_iterator = 1
-    the_answer = 0
-    while the_iterator < 30:
-        the_denominator = the_iterator * Power(the_number, the_iterator)
-        the_term = 1 / the_denominator
-        the_answer = the_term + the_answer
-        the_iterator += 1
-        the_iterator += 1
-    return the_answer
+    the_numerator = 1 + the_number
+    the_denominator = 1 - the_number
+    the_argument = the_numerator / the_denominator
+    return LN(the_argument) / 2
  #Get binary from decimal
 def DecToBin(the_number):
     if the_number <= 1:
