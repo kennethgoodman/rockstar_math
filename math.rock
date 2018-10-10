@@ -217,7 +217,7 @@ Give back the answer
 Sinh takes the number
 Put 1 into the iterator
 Put 0 into the answer
-While the iterator is less than 26
+While the iterator is less than 50
 Put Power taking the number, the iterator over Factorial taking the iterator into the term
 Put the answer plus the term into the answer
 Build the iterator up
@@ -230,7 +230,7 @@ Give back the answer
 Cosh takes the number
 Put 0 into the iterator
 Put 0 into the answer
-While the iterator is less than 26
+While the iterator is less than 50
 Put Power taking the number, the iterator over Factorial taking the iterator into the term
 Put the answer plus the term into the answer
 Build the iterator up

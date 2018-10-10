@@ -166,7 +166,7 @@ def Arccos(the_number):
 def Sinh(the_number):
     the_iterator = 1
     the_answer = 0
-    while the_iterator < 26:
+    while the_iterator < 50:
         the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
         the_answer = the_answer + the_term
         the_iterator += 1
@@ -176,7 +176,7 @@ def Sinh(the_number):
 def Cosh(the_number):
     the_iterator = 0
     the_answer = 0
-    while the_iterator < 26:
+    while the_iterator < 50:
         the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
         the_answer = the_answer + the_term
         the_iterator += 1

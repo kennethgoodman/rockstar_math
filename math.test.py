@@ -1,5 +1,5 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, Mod, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos
-from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, cos, tan, atan, asin, acos
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, Mod, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos, Sinh, Cosh, Tanh
+from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, cos, tan, atan, asin, acos, sinh, cosh, tanh
 import math
 
 def run_factorial_test():
@@ -108,6 +108,21 @@ def run_arccos_test():
         print("Doing arccos({})".format(x))
         assert_close( acos(x), Arccos(x), "arccos({})".format(x))
 
+def run_sinh_test():
+    for x in [-10, -3, -1, -0.1, 0, 0.1, 1, 3, 10]:
+        print("Doing sinh({})".format(x))
+        assert_close( sinh(x), Sinh(x), "sinh({})".format(x))
+
+def run_cosh_test():
+    for x in [-10, -3, -1, -0.1, 0, 0.1, 1, 3, 10]:
+        print("Doing cosh({})".format(x))
+        assert_close( cosh(x), Cosh(x), "cosh({})".format(x))
+
+def run_tanh_test():
+    for x in [-10, -3, -1, -0.1, 0, 0.1, 1, 3, 10]:
+        print("Doing tanh({})".format(x))
+        assert_close( tanh(x), Tanh(x), "tanh({})".format(x))
+
 def run_dec_to_bin_test():
     pass  # not using until we have integer division
 
@@ -130,6 +145,9 @@ def main():
     run_arcsin_test()
     run_arccos_test()
     run_arctan_test()
+    run_sinh_test()
+    run_cosh_test()
+    run_tanh_test()
     run_dec_to_bin_test()
 
 if __name__ == '__main__':
