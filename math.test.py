@@ -1,5 +1,5 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, Mod, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos, Sinh, Cosh, Tanh
-from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, cos, tan, atan, asin, acos, sinh, cosh, tanh
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, Mod, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos, Sinh, Cosh, Tanh, Arcsinh, Arccosh, Arctanh
+from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, cos, tan, atan, asin, acos, sinh, cosh, tanh, asinh, acosh, atanh
 import math
 
 def run_factorial_test():
@@ -123,6 +123,24 @@ def run_tanh_test():
         print("Doing tanh({})".format(x))
         assert_close( tanh(x), Tanh(x), "tanh({})".format(x))
 
+def run_arcsinh_test():
+    # for x in [-100000, -1000, -10, -1, 0, 1, 10, 1000, 1000000]:
+    for x in [-100, -10, -1, 0, 1, 10, 100]:
+        print("Doing arcsinh({})".format(x))
+        assert_close( asinh(x), Arcsinh(x), "arcsinh({})".format(x))
+
+def run_arccosh_test():
+    # for x in [1.0001, 1.01, 2, 10, 100, 1000, 100000]:
+    for x in [1.0001, 1.01, 2, 10, 100]:
+        print("Doing arccosh({})".format(x))
+        assert_close( acosh(x), Arccosh(x), "arccosh({})".format(x))
+
+def run_arctanh_test():
+    # for x in [-0.999, -0.99, -0.9, -0.5, 0, 0.5, 0.9, 0.99, 0.999]:
+    for x in [-0.99, -0.9, -0.5, 0, 0.5, 0.9, 0.99]:
+        print("Doing arctanh({})".format(x))
+        assert_close( atanh(x), Arctanh(x), "arctanh({})".format(x))
+
 def run_dec_to_bin_test():
     pass  # not using until we have integer division
 
@@ -148,6 +166,9 @@ def main():
     run_sinh_test()
     run_cosh_test()
     run_tanh_test()
+    run_arcsinh_test()
+    run_arccosh_test()
+    run_arctanh_test()
     run_dec_to_bin_test()
 
 if __name__ == '__main__':
