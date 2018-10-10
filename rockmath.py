@@ -188,7 +188,17 @@ def Tanh(the_number):
     the_denominator = Cosh(the_number)
     return the_numerator / the_denominator
  #Arcsinh
+def Arcsinh(the_number):
+    the_term = Power(the_number, 2)
+    the_term = the_term + 1
+    the_argument = the_number + Square_Root(the_term)
+    return LN(the_argument)
  #Arccosh
+def Arccosh(the_number):
+    the_term = Power(the_number, 2)
+    the_term = the_term - 1
+    the_argument = the_number + Square_Root(the_term)
+    return LN(the_argument)
  #Arctanh
 def Arctanh(the_number):
     the_numerator = 1 + the_number

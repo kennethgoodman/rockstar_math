@@ -247,9 +247,19 @@ Give back the numerator over the denominator
 
 
 (Arcsinh)
+Arcsinh takes the number
+Put Power taking the number, 2 into the term
+Put the term plus 1 into the term
+Put the number plus Square Root taking the term into the argument
+Give back LN taking the argument
 
 
 (Arccosh)
+Arccosh takes the number
+Put Power taking the number, 2 into the term
+Put the term minus 1 into the term
+Put the number plus Square Root taking the term into the argument
+Give back LN taking the argument
 
 
 (Arctanh)
