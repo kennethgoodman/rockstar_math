@@ -1,5 +1,12 @@
  #Pi constant
 the_pi = 3.1415926535897932
+the_tau = the_pi * 2
+ #Convert degrees to radians
+def DegToRad(the_degrees):
+    return the_degrees * the_tau / 360
+ #Convert radians to degrees
+def RadToDeg(the_radian):
+    return the_radian * 360 / the_tau
  #Factorial: n!
 def Factorial(the_number):
     the_zero = 0
