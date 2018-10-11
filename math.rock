@@ -1,6 +1,16 @@
 (Pi constant)
 Put 3.1415926535897932 into the pi
 Put 2.7182818284590452 into the e
+Put the pi times 2 into the tau
+
+(Convert degrees to radians)
+DegToRad takes the degrees
+Give back the degrees times the tau over 360
+
+
+(Convert radians to degrees)
+RadToDeg takes the radian
+Give back the radian times 360 over the tau
 
 
 (Factorial: n!)

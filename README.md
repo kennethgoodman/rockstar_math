@@ -11,5 +11,6 @@ Functions needed:
 3. Data Structure: Binary Array with large numbers?
 4. Binary: xor 
 5. Hyperbolic functions: sinh, cosh, tanh, ..., atanh
+6. Rational Math: Power
 
 This is math lib for https://github.com/dylanbeattie/rockstar 
