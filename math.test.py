@@ -1,5 +1,5 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, the_tau, DegToRad, RadToDeg, Mod, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos
-from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, radians, degrees, cos, tan, atan, asin, acos
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, the_tau, DegToRad, RadToDeg, Mod, Gcd, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos
+from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, gcd, floor, ceil, sin, pi, radians, degrees, cos, tan, atan, asin, acos
 import math
 
 def run_factorial_test():
@@ -60,6 +60,12 @@ def run_log_test():
         for b in range(2, 5):
             print("testing log_{}({})".format(b,x))
             assert_close(pyln(x,b), rocklog(x, b),"Failed for log_{}({})".format(b,x))
+
+def run_gcd_test():
+    for x in range(10):
+        for y in range(30,41):
+            print("testing gcd({}, {})".format(x,y))
+            assert_close( gcd(x,y), Gcd(x,y), "Failed for gcd({}, {})".format(x,y))
 
 def run_floor_test():
     for x in [-2.99, -2.5, -1, 0, -0.0, 2, 4.001, 4.999]:
@@ -132,6 +138,7 @@ def main():
     run_degtorad_test()
     run_radtodeg_test()
     run_log_test()
+    run_gcd_test()
     run_floor_test()
     run_ceil_test()
     run_exponential_test()

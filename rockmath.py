@@ -51,6 +51,22 @@ def Mod(the_number, the_modulo):
             the_number = the_number + the_modulo
         return the_number
     return the_number
+ #Gcd
+def Gcd(the_x, the_y):
+    if Mod(the_x, 1) != 0 or Mod(the_y, 1) != 0:
+        return "Error: the input must be two integer numbers"
+    the_x = Absolute_Value(the_x)
+    the_y = Absolute_Value(the_y)
+    if the_x == 0:
+        return the_y
+    if the_y == 0:
+        return the_x
+    while the_x != the_y:
+        if the_x > the_y:
+            the_x = the_x - the_y
+        else:
+            the_y = the_y - the_x
+    return the_x
  #Floor
 def Floor(the_number):
     the_number = the_number - Mod(the_number, 1)

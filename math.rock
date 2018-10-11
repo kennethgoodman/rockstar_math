@@ -73,6 +73,29 @@ Give back the number
 Give back the number
 
 
+(Gcd)
+Gcd takes the x and the y
+If Mod taking the x, 1 is not 0 or Mod taking the y, 1 is not 0
+Give back "Error: the input must be two integer numbers"
+
+Put Absolute Value taking the x into the x
+Put Absolute Value taking the y into the y
+If the x is 0
+Give back the y
+
+If the y is 0
+Give back the x
+
+While the x is not the y
+If the x is greater than the y
+Put the x minus the y into the x
+Else
+Put the y minus the x into the y
+
+
+Give back the x
+
+
 (Floor)
 Floor takes the number
 Put the number minus Mod taking the number, 1 into the number
