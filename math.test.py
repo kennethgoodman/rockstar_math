@@ -1,5 +1,5 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, Mod, LOG as rocklog, Exp, Sine, Cos, Tan, Arctan, Arcsin, Arccos
-from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, cos, tan, atan, asin, acos
+from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, the_tau, DegToRad, RadToDeg, Mod, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos
+from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, floor, ceil, sin, pi, radians, degrees, cos, tan, atan, asin, acos
 import math
 
 def run_factorial_test():
@@ -9,7 +9,7 @@ def run_factorial_test():
     assert rockfactorial(-1) == -1
 
 def close(x,y):
-    return abs(x - y) < 1e-10 
+    return abs(x - y) < 1e-10
 
 def assert_close(x, y, m=""):
     if close(x,y):
@@ -31,7 +31,7 @@ def run_sqrt_test():
 def run_ln_test():
     for x in range(1, 50):
         print("testing ln({})".format(x))
-        assert_close(pyln(x), rockln(x), "Failed for ln({})".format(x)) 
+        assert_close(pyln(x), rockln(x), "Failed for ln({})".format(x))
 
 def run_abs_test():
     for x in [-1, -40, -3.3, 0, 3, 32, 2]:
@@ -39,11 +39,21 @@ def run_abs_test():
         assert_close(abs(x), Absolute_Value(x), "Failed for abs({})".format(x))
 
 def run_e_test():
-    assert_closer(math.e, the_e, "Approximation of e")
+    assert_close(math.e, the_e, "Approximation of e")
 
 def run_pi_test():
     assert_close(pi, the_pi, "Approximation of pi")
-    assert_close(pi/2, the_pi/2, "Approximation of half pi")
+    assert_close(pi*2, the_tau, "Approximation of 2*pi")
+
+def run_degtorad_test():
+    for x in [0, 1, 5, 45, 90, 360, 777, -0, -0.1, -75, -360, -1080]:
+        print("testing {}° -> radians".format(x))
+        assert_close( radians(x), DegToRad(x), "Failed for deg_to_rad({})".format(x))
+
+def run_radtodeg_test():
+    for x in [0, 0.5, pi/2, pi, 2*pi, 4.88*pi, -0, -0.25*pi, -pi, -pi*5]:
+        print("testing {} * 2*pi -> degrees".format(x))
+        assert_close( degrees(x), RadToDeg(x), "Failed for rad_to_deg({})".format(x))
 
 def run_log_test():
     for x in range(1, 10):
@@ -79,7 +89,7 @@ def run_sine_test():
         assert_close( sin(x), Sine(x), "Sin({})".format(x))
 
 def run_cos_test():
-    for x in range(-8,9):    
+    for x in range(-8,9):
         print("Doing cos({} * pi / 8)".format(x))
         x *= pi / 8
         assert_close( cos(x), Cos(x), "cos({})".format(x))
@@ -89,7 +99,7 @@ def run_tan_test():
         print("Doing tan({} * pi / 2)".format(x))
         x *= pi / 16
         assert_close( tan(x), Tan(x), "tan({})".format(x))
-        
+
 def run_arctan_test():
     for x in range(-9,10):
         x/=10
@@ -117,7 +127,10 @@ def main():
     run_ln_test()
     run_sqrt_test()
     run_abs_test()
+    run_e_test()
     run_pi_test()
+    run_degtorad_test()
+    run_radtodeg_test()
     run_log_test()
     run_floor_test()
     run_ceil_test()
