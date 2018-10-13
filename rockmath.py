@@ -61,32 +61,66 @@ def Ceil(the_number):
     the_number = -1 * Floor(the_number)
     return the_number
  #Power: a^x
-def Power(the_number, the_exponent):
+def Power(the_base, the_exponent):
+    if the_exponent < 0:
+        the_newexponent = -1 * the_exponent
+        return 1 / Power(the_base, the_newexponent)
+     #If the base is 0 and  the exponent is 0
+     #Give back "Error: indefinite"
+     #
     if the_exponent == 0:
         return 1
+    if the_base == 0:
+        return 0
+    if Mod(the_exponent, 1) == 0:
+        return PowerIntegerExponent(the_base, the_exponent)
+    else:
+        return PowerRealExponent(the_base, the_exponent)
+ #PowerIntegerExponent
+def PowerIntegerExponent(the_base, the_exponent):
     the_iterator = 1
-    the_answer = the_number
+    the_answer = the_base
     while the_iterator < the_exponent: #Probably can also use divide and conquer exponentiation -> e^n + e^m + ....
-        the_answer = the_number * the_answer
+        the_answer = the_base * the_answer
         the_iterator += 1
     return the_answer
+ #PowerRealExponent
+def PowerRealExponent(the_base, the_exponent):
+    the_argument = the_exponent * LN(the_base)
+    return Exp(the_argument)
+ #Exp
 def Exp(the_x):
-    return Power(the_e, the_x)
+    the_answer = 1
+    the_iterator = 1
+    while the_iterator < 50:
+        the_numerator = Power(the_x, the_iterator)
+        the_denominator = Factorial(the_iterator)
+        the_term = the_numerator / the_denominator
+        the_answer = the_answer + the_term
+        the_iterator += 1
+    return the_answer
  #Natural Logarithm, always base e
 def LN(the_number):
     the_top = the_number - 1
     the_bottom = the_number + 1
     the_x = the_top / the_bottom
     the_iterator = 1
-    the_sum = 0
-    while the_iterator < 2000:
+    the_approximation = 0
+    while the_iterator < 10: #get reasonable starting point for Halley's method
         the_term = Power(the_x, the_iterator)
         the_term = the_term / the_iterator
-        the_sum = the_sum + the_term
+        the_approximation = the_approximation + the_term
         the_iterator += 1
         the_iterator += 1
-    the_sum = the_sum * 2
-    return the_sum
+    the_approximation = the_approximation * 2 #end power expansion, start Halley's cubic convergence
+    the_iterator = 0
+    while the_iterator < 30:
+        the_numerator = the_number - Exp(the_approximation)
+        the_denominator = the_number + Exp(the_approximation)
+        the_term = 2 * the_numerator / the_denominator
+        the_approximation = the_approximation + the_term
+        the_iterator += 1
+    return the_approximation
  #Log with number and base
 def LOG(the_number, the_base):
     the_top = LN(the_number)

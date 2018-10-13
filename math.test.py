@@ -18,8 +18,12 @@ def assert_close(x, y, m=""):
         assert False, "py({}) is not close to rock({})-{}".format(x,y,m)
 
 def run_power_test():
-    for x in range(10):
-        for n in range(10):
+    for x in range(-10, 10):
+        for n in [-10, -pi, -2.5, -2, -1, -0.15, 0, 0.15, 1, 2, 2.5, pi, 10]:
+            if x == 0 and n <= 0: # indefinite answer
+                continue
+            if x<0 and n%1!=0: # roots of negative numbers make complex numbers
+                continue
             print("testing {}**{}".format(x,n))
             assert_close(x**n, Power(x,n), "Failed for {}**{}".format(x,n))
 
@@ -72,7 +76,7 @@ def run_ceil_test():
         assert_close(ceil(x), Ceil(x), "Failed for ceil({})".format(x))
 
 def run_exponential_test():
-    for x in range(10):
+    for x in [-10, -1, -0.01, -0.00001, 0.0000001, 0.01, 1, pi, 10]:
         print("testing e ^ {}".format(x))
         assert_close( math.e ** x, Exp(x), "Failed for e ^ {}".format(x))
 
