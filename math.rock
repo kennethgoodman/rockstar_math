@@ -1,5 +1,6 @@
 (Pi constant)
 Put 3.1415926535897932 into the pi
+Put 2.7182818284590452 into the e
 Put the pi times 2 into the tau
 
 (Convert degrees to radians)
@@ -37,23 +38,6 @@ Put The number times -1 into The number
 Give back The number
 
 Give back The number
-
-(Exp Estimate: estimate e^x, x close to 1)
-Exp Estimate takes The x and The Number Of Terms
-Put 0 into The Iterator
-Put 0 into The Answer
-While The Iterator is as little as The Number Of Terms
-Put Factorial taking The Iterator into the bottom
-Put The x over the bottom into The Term
-Put The Answer plus The Term into The Answer
-Build The Iterator up
-
-Give back The Answer
-
-(Create variable: e)
-Put 1 into the x
-Put 50 into the terms
-Put Exp Estimate taking the x, the terms into the e
 
 
 (Mod: a % m)
@@ -110,21 +94,55 @@ Give back the number
 
 
 (Power: a^x)
-Power takes the number and the exponent
+Power takes the base and the exponent
+If the exponent is less than 0
+Put -1 times the exponent into the newexponent
+Give back 1 over Power taking the base, the newexponent
+
+(If the base is 0 and  the exponent is 0)
+(Give back "Error: indefinite")
+()
 If the exponent is 0
 Give back 1
 
+If the base is 0
+Give back 0
+
+If Mod taking the exponent, 1 is 0
+Give back PowerIntegerExponent taking the base, the exponent
+Else
+Give back PowerRealExponent taking the base, the exponent
+
+
+(PowerIntegerExponent)
+PowerIntegerExponent takes the base and the exponent
 Put 1 into the iterator
-Put the number into the answer
-While the iterator is smaller than the exponent  (Probably can also use divide and conquer exponentiation -> e^n + e^m + ....)
-Put the number times the answer into the answer
+Put the base into the answer
+While the iterator is smaller than the exponent (Probably can also use divide and conquer exponentiation -> e^n + e^m + ....)
+Put the base times the answer into the answer
 Build the iterator up
 
 Give back the answer
 
 
+(PowerRealExponent)
+PowerRealExponent takes the base and the exponent
+Put the exponent times LN taking the base into the argument
+Give back Exp taking the argument
+
+
+(Exp)
 Exp takes the x
-Give back Power taking the e, the x
+Put 1 into the answer
+Put 1 into the iterator
+While the iterator is less than 50
+Put Power taking the x, the iterator into the numerator
+Put Factorial taking the iterator into the denominator
+Put the numerator over the denominator into the term
+Put the answer plus the term into the answer
+Build the iterator up
+
+Give back the answer
 
 
 (Natural Logarithm, always base e)
@@ -133,16 +151,25 @@ Put the number minus 1 into the top
 Put the number plus 1 into the bottom
 Put the top over the bottom into the x
 Put 1 into the iterator
-Put 0 into the sum
-While the iterator is less than 2000
+Put 0 into the approximation
+While the iterator is less than 10 (get reasonable starting point for Halley's method)
 Put Power taking the x, the iterator into the term
 Put the term over the iterator into the term
-Put the sum plus the term into the sum
+Put the approximation plus the term into the approximation
 Build the iterator up
 Build the iterator up
 
-Put the sum times 2 into the sum
-Give back the sum
+Put the approximation times 2 into the approximation (end power expansion, start Halley's cubic convergence)
+Put 0 into the iterator
+While the iterator is less than 30
+Put the number minus Exp taking the approximation into the numerator
+Put the number plus Exp taking the approximation into the denominator
+Put 2 times the numerator over the denominator into the term
+Put the approximation plus the term into the approximation
+Build the iterator up
+
+Give back the approximation
+
 
 (Log with number and base)
 LOG takes the number and the base
@@ -244,6 +271,63 @@ Arccos takes the number
 Put the pi over 2 into the answer
 Put the answer minus Arcsin taking the number into the answer
 Give back the answer
+
+
+(Sinh)
+Sinh takes the number
+Put 1 into the iterator
+Put 0 into the answer
+While the iterator is less than 50
+Put Power taking the number, the iterator over Factorial taking the iterator into the term
+Put the answer plus the term into the answer
+Build the iterator up
+Build the iterator up
+
+Give back the answer
+
+
+(Cosh)
+Cosh takes the number
+Put 0 into the iterator
+Put 0 into the answer
+While the iterator is less than 50
+Put Power taking the number, the iterator over Factorial taking the iterator into the term
+Put the answer plus the term into the answer
+Build the iterator up
+Build the iterator up
+
+Give back the answer
+
+
+(Tanh)
+Tanh takes the number
+Put Sinh taking the number into the numerator
+Put Cosh taking the number into the denominator
+Give back the numerator over the denominator
+
+
+(Arcsinh)
+Arcsinh takes the number
+Put Power taking the number, 2 into the term
+Put the term plus 1 into the term
+Put the number plus Square Root taking the term into the argument
+Give back LN taking the argument
+
+
+(Arccosh)
+Arccosh takes the number
+Put Power taking the number, 2 into the term
+Put the term minus 1 into the term
+Put the number plus Square Root taking the term into the argument
+Give back LN taking the argument
+
+
+(Arctanh)
+Arctanh takes the number
+Put 1 plus the number into the numerator
+Put 1 minus the number into the denominator
+Put the numerator over the denominator into the argument
+Give back LN taking the argument over 2
 
 
 (Get binary from decimal)

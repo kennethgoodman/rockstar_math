@@ -22,7 +22,8 @@ matrix:
     - python: "nightly"
 
 install:
-  - rockstar-py --output rockmath.py math.rock
+  - pip install rockstar-py
 
 script:
+  - rockstar-py --output rockmath.py math.rock
   - python math.test.py
