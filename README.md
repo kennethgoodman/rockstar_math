@@ -25,6 +25,8 @@ Factorial taking Integer -> Integer
 
 Mod taking Integer, Integer -> Integer
 
+GCD taking Integer, Integer -> Integer
+
 **Geometry**
 
 DegToRad taking Number -> Number
