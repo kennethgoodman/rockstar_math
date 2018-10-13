@@ -2,15 +2,15 @@
 mathlib for rockstar language
 
 
-Accepting PRs for more idiomatic or functions I've haven't done yet.
+Accepting PRs for more idiomatic or functions not done yet.
 
 Functions needed:
 
-1. Trig helper: degree <-> radians
-2. discrete math: gcd, infinity
-3. Data Structure: Binary Array with large numbers?
-4. Binary: xor 
-5. Hyperbolic functions: sinh, cosh, tanh, ..., atanh
-6. Rational Math: Power
+1. discrete math: infinity
+2. Data Structure: Binary Array with large numbers?
+3. Binary: xor 
+4. Hyperbolic functions: sinh, cosh, tanh, ..., atanh
+
+Thanks to @DavideFauri for developing most of this library.
 
 This is math lib for https://github.com/dylanbeattie/rockstar 
