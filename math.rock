@@ -223,6 +223,63 @@ Put the answer minus Arcsin taking the number into the answer
 Give back the answer
 
 
+(Sinh)
+Sinh takes the number
+Put 1 into the iterator
+Put 0 into the answer
+While the iterator is less than 50
+Put Power taking the number, the iterator over Factorial taking the iterator into the term
+Put the answer plus the term into the answer
+Build the iterator up
+Build the iterator up
+
+Give back the answer
+
+
+(Cosh)
+Cosh takes the number
+Put 0 into the iterator
+Put 0 into the answer
+While the iterator is less than 50
+Put Power taking the number, the iterator over Factorial taking the iterator into the term
+Put the answer plus the term into the answer
+Build the iterator up
+Build the iterator up
+
+Give back the answer
+
+
+(Tanh)
+Tanh takes the number
+Put Sinh taking the number into the numerator
+Put Cosh taking the number into the denominator
+Give back the numerator over the denominator
+
+
+(Arcsinh)
+Arcsinh takes the number
+Put Power taking the number, 2 into the term
+Put the term plus 1 into the term
+Put the number plus Square Root taking the term into the argument
+Give back LN taking the argument
+
+
+(Arccosh)
+Arccosh takes the number
+Put Power taking the number, 2 into the term
+Put the term minus 1 into the term
+Put the number plus Square Root taking the term into the argument
+Give back LN taking the argument
+
+
+(Arctanh)
+Arctanh takes the number
+Put 1 plus the number into the numerator
+Put 1 minus the number into the denominator
+Put the numerator over the denominator into the argument
+Give back LN taking the argument over 2
+
+
 (Get binary from decimal)
 DecToBin takes the number
 If the number is as little as 1

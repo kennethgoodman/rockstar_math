@@ -169,6 +169,49 @@ def Arccos(the_number):
     the_answer = the_pi / 2
     the_answer = the_answer - Arcsin(the_number)
     return the_answer
+ #Sinh
+def Sinh(the_number):
+    the_iterator = 1
+    the_answer = 0
+    while the_iterator < 50:
+        the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
+        the_answer = the_answer + the_term
+        the_iterator += 1
+        the_iterator += 1
+    return the_answer
+ #Cosh
+def Cosh(the_number):
+    the_iterator = 0
+    the_answer = 0
+    while the_iterator < 50:
+        the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
+        the_answer = the_answer + the_term
+        the_iterator += 1
+        the_iterator += 1
+    return the_answer
+ #Tanh
+def Tanh(the_number):
+    the_numerator = Sinh(the_number)
+    the_denominator = Cosh(the_number)
+    return the_numerator / the_denominator
+ #Arcsinh
+def Arcsinh(the_number):
+    the_term = Power(the_number, 2)
+    the_term = the_term + 1
+    the_argument = the_number + Square_Root(the_term)
+    return LN(the_argument)
+ #Arccosh
+def Arccosh(the_number):
+    the_term = Power(the_number, 2)
+    the_term = the_term - 1
+    the_argument = the_number + Square_Root(the_term)
+    return LN(the_argument)
+ #Arctanh
+def Arctanh(the_number):
+    the_numerator = 1 + the_number
+    the_denominator = 1 - the_number
+    the_argument = the_numerator / the_denominator
+    return LN(the_argument) / 2
  #Get binary from decimal
 def DecToBin(the_number):
     if the_number <= 1:
