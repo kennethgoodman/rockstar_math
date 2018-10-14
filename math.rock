@@ -206,15 +206,17 @@ Give back the top over the bottom
 
 (Square Root Function)
 Square Root takes the number
-Put 0.5 times the number into the approximation
+Put null into the prevanswer
+Put 0.5 times the number into the nextanswer
 Put 1 into the iterator
 Put 1.0 times the number into the number
-While the iterator is less than 50
-Put the number over the approximation plus the approximation into the term
-Put 0.5 times the term into the approximation
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
+Put the number over the prevanswer plus the prevanswer into the term
+Put 0.5 times the term into the nextanswer
 Build the iterator up
 
-Give back the approximation
+Give back the nextanswer
 
 
 (Sine)

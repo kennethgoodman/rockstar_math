@@ -153,14 +153,16 @@ def LOG(the_number, the_base):
     return the_top / the_bottom
  #Square Root Function
 def Square_Root(the_number):
-    the_approximation = 0.5 * the_number
+    the_prevanswer = False
+    the_nextanswer = 0.5 * the_number
     the_iterator = 1
     the_number = 1.0 * the_number
-    while the_iterator < 50:
-        the_term = the_number / the_approximation + the_approximation
-        the_approximation = 0.5 * the_term
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
+        the_term = the_number / the_prevanswer + the_prevanswer
+        the_nextanswer = 0.5 * the_term
         the_iterator += 1
-    return the_approximation
+    return the_nextanswer
  #Sine
 def Sine(the_radian):
     the_iterator = 1
