@@ -222,33 +222,37 @@ Give back the nextanswer
 (Sine)
 Sine takes the radian
 Put 1 into the iterator
-Put 0 into the answer
+Put 666 into the prevanswer
+Put 0 into the nextanswer
 Put 1 into the sign
-While the iterator is less than 26
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the radian, the iterator over Factorial taking the iterator into the term
 Put the term times the sign into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 Put the sign times -1 into the sign
 
-Give back the answer
+Give back the nextanswer
 
 
 (Cos)
 Cos takes the radian
 Put 0 into the iterator
-Put 0 into the answer
+Put 666 into the prevanswer
+Put 0 into the nextanswer
 Put 1 into the sign
-While the iterator is less than 26
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the radian, the iterator over Factorial taking the iterator into the term
 Put the term times the sign into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 Put the sign times -1 into the sign
 
-Give back the answer
+Give back the nextanswer
 
 
 (Tan)
@@ -261,24 +265,28 @@ Give back the numerator over the denominator
 (Arctan)
 Arctan takes the number
 Put 1 into the iterator
-Put 0 into the answer
+Put 666 into the prevanswer
+Put 0 into the nextanswer
 Put 1 into the sign
-While the iterator is less than 200
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the number, the iterator over the iterator into the term
 Put the term times the sign into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 Put the sign times -1 into the sign
 
-Give back the answer
+Give back the nextanswer
 
 
 (Arcsin)
 Arcsin takes the number
 Put 0 into the iterator
-Put 0 into the answer
-While the iterator is less than 80
+Put 666 into the prevanswer
+Put 0 into the nextanswer
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put 2 times the iterator into the placeholder
 Put Factorial taking the placeholder into the numerator
 Put 2 times the iterator plus 1 into the exponent
@@ -289,10 +297,10 @@ Put Power taking the placeholder, 2 into the seconddenominator
 Put 2 times the iterator plus 1 into the thirddenominator
 Put the firstdenominator times the seconddenominator times the thirddenominator into the denominator
 Put the numerator over the denominator into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 
-Give back the answer
+Give back the nextanswer
 
 
 (Arccos)

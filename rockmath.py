@@ -166,29 +166,33 @@ def Square_Root(the_number):
  #Sine
 def Sine(the_radian):
     the_iterator = 1
-    the_answer = 0
+    the_prevanswer = 666
+    the_nextanswer = 0
     the_sign = 1
-    while the_iterator < 26:
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_radian, the_iterator) / Factorial(the_iterator)
         the_term = the_term * the_sign
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
         the_sign = the_sign * -1
-    return the_answer
+    return the_nextanswer
  #Cos
 def Cos(the_radian):
     the_iterator = 0
-    the_answer = 0
+    the_prevanswer = 666
+    the_nextanswer = 0
     the_sign = 1
-    while the_iterator < 26:
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_radian, the_iterator) / Factorial(the_iterator)
         the_term = the_term * the_sign
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
         the_sign = the_sign * -1
-    return the_answer
+    return the_nextanswer
  #Tan
 def Tan(the_radian):
     the_numerator = Sine(the_radian)
@@ -197,21 +201,25 @@ def Tan(the_radian):
  #Arctan
 def Arctan(the_number):
     the_iterator = 1
-    the_answer = 0
+    the_prevanswer = 666
+    the_nextanswer = 0
     the_sign = 1
-    while the_iterator < 200:
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_number, the_iterator) / the_iterator
         the_term = the_term * the_sign
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
         the_sign = the_sign * -1
-    return the_answer
+    return the_nextanswer
  #Arcsin
 def Arcsin(the_number):
     the_iterator = 0
-    the_answer = 0
-    while the_iterator < 80:
+    the_prevanswer = 666
+    the_nextanswer = 0
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_placeholder = 2 * the_iterator
         the_numerator = Factorial(the_placeholder)
         the_exponent = 2 * the_iterator + 1
@@ -222,9 +230,9 @@ def Arcsin(the_number):
         the_thirddenominator = 2 * the_iterator + 1
         the_denominator = the_firstdenominator * the_seconddenominator * the_thirddenominator
         the_term = the_numerator / the_denominator
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
-    return the_answer
+    return the_nextanswer
  #Arccos
 def Arccos(the_number):
     the_answer = the_pi / 2
