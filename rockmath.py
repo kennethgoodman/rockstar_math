@@ -111,37 +111,41 @@ def PowerRealExponent(the_base, the_exponent):
     return Exp(the_argument)
  #Exp
 def Exp(the_x):
-    the_answer = 1
+    the_prevanswer = False
+    the_nextanswer = 1
     the_iterator = 1
-    while the_iterator < 50:
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_numerator = Power(the_x, the_iterator)
         the_denominator = Factorial(the_iterator)
         the_term = the_numerator / the_denominator
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
-    return the_answer
+    return the_nextanswer
  #Natural Logarithm, always base e
 def LN(the_number):
     the_top = the_number - 1
     the_bottom = the_number + 1
     the_x = the_top / the_bottom
     the_iterator = 1
-    the_approximation = 0
+    the_answer = 0
     while the_iterator < 10: #get reasonable starting point for Halley's method
         the_term = Power(the_x, the_iterator)
         the_term = the_term / the_iterator
-        the_approximation = the_approximation + the_term
+        the_answer = the_answer + the_term
         the_iterator += 1
         the_iterator += 1
-    the_approximation = the_approximation * 2 #end power expansion, start Halley's cubic convergence
+    the_nextanswer = the_answer * 2 #end power expansion, start Halley's cubic convergence
+    the_prevanswer = False
     the_iterator = 0
-    while the_iterator < 30:
-        the_numerator = the_number - Exp(the_approximation)
-        the_denominator = the_number + Exp(the_approximation)
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
+        the_numerator = the_number - Exp(the_prevanswer)
+        the_denominator = the_number + Exp(the_prevanswer)
         the_term = 2 * the_numerator / the_denominator
-        the_approximation = the_approximation + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
-    return the_approximation
+    return the_nextanswer
  #Log with number and base
 def LOG(the_number, the_base):
     the_top = LN(the_number)

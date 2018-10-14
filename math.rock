@@ -155,16 +155,18 @@ Give back Exp taking the argument
 
 (Exp)
 Exp takes the x
-Put 1 into the answer
+Put null into the prevanswer
+Put 1 into the nextanswer
 Put 1 into the iterator
-While the iterator is less than 50
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the x, the iterator into the numerator
 Put Factorial taking the iterator into the denominator
 Put the numerator over the denominator into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 
-Give back the answer
+Give back the nextanswer
 
 
 (Natural Logarithm, always base e)
@@ -173,24 +175,26 @@ Put the number minus 1 into the top
 Put the number plus 1 into the bottom
 Put the top over the bottom into the x
 Put 1 into the iterator
-Put 0 into the approximation
+Put 0 into the answer
 While the iterator is less than 10 (get reasonable starting point for Halley's method)
 Put Power taking the x, the iterator into the term
 Put the term over the iterator into the term
-Put the approximation plus the term into the approximation
+Put the answer plus the term into the answer
 Build the iterator up
 Build the iterator up
 
-Put the approximation times 2 into the approximation (end power expansion, start Halley's cubic convergence)
+Put the answer times 2 into the nextanswer (end power expansion, start Halley's cubic convergence)
+Put null into the prevanswer
 Put 0 into the iterator
-While the iterator is less than 30
-Put the number minus Exp taking the approximation into the numerator
-Put the number plus Exp taking the approximation into the denominator
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
+Put the number minus Exp taking the prevanswer into the numerator
+Put the number plus Exp taking the prevanswer into the denominator
 Put 2 times the numerator over the denominator into the term
-Put the approximation plus the term into the approximation
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 
-Give back the approximation
+Give back the nextanswer
 
 
 (Log with number and base)
@@ -198,6 +202,7 @@ LOG takes the number and the base
 Put LN taking the number into the top
 Put LN taking the base into the bottom
 Give back the top over the bottom
+
 
 (Square Root Function)
 Square Root takes the number
