@@ -40,6 +40,28 @@ Give back The number
 Give back The number
 
 
+(Is-close)
+Is Close takes the a and the b
+Put 0.000000001 into the relativetolerance (to be changed to an optional argument)
+Put 0 into the absolutetolerance (to be changed to an optional argument)
+Put Absolute Value taking the a into the largest
+If Absolute Value taking the b is greater than the largest
+Put Absolute Value taking the b into the largest
+
+Put the relativetolerance times the largest into the scalefactor
+If the absolutetolerance is greater than the scalefactor
+Put the absolutetolerance into the threshold
+Else
+Put the scalefactor into the threshold
+
+Put the a minus the b into the difference
+Put Absolute Value taking the difference into the difference
+If the difference is as little as the threshold
+Give back true
+Else
+Give back false
+
+
 (Mod: a % m)
 Mod takes the number and the modulo
 If the number is greater than 0
