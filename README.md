@@ -74,8 +74,10 @@ Floor taking Number -> Integer
 Ceil taking Number -> Integer
 
 Power taking Number, Number -> Number
-  PowerIntegerExponent
-  PowerRealExponent
+
+PowerIntegerExponent
+
+PowerRealExponent
 
 Exp taking Number -> Number
 
@@ -84,3 +86,5 @@ LN taking Number -> Number
 LOG taking Number, Number -> Number
 
 Square_Root taking Number -> Number
+
+IsClose taking Number, Number -> Number
