@@ -29,7 +29,7 @@ def Absolute_Value(the_number):
     return the_number
  #Is-close
 def Is_Close(the_a, the_b):
-    the_relativetolerance = 0.000000001 #to be changed to an optional argument
+    the_relativetolerance = 0.0000000001 #to be changed to an optional argument
     the_absolutetolerance = 0 #to be changed to an optional argument
     the_largest = Absolute_Value(the_a)
     if Absolute_Value(the_b) > the_largest:
@@ -111,37 +111,41 @@ def PowerRealExponent(the_base, the_exponent):
     return Exp(the_argument)
  #Exp
 def Exp(the_x):
-    the_answer = 1
+    the_prevanswer = 666
+    the_nextanswer = 1
     the_iterator = 1
-    while the_iterator < 50:
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_numerator = Power(the_x, the_iterator)
         the_denominator = Factorial(the_iterator)
         the_term = the_numerator / the_denominator
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
-    return the_answer
+    return the_nextanswer
  #Natural Logarithm, always base e
 def LN(the_number):
     the_top = the_number - 1
     the_bottom = the_number + 1
     the_x = the_top / the_bottom
     the_iterator = 1
-    the_approximation = 0
+    the_answer = 0
     while the_iterator < 10: #get reasonable starting point for Halley's method
         the_term = Power(the_x, the_iterator)
         the_term = the_term / the_iterator
-        the_approximation = the_approximation + the_term
+        the_answer = the_answer + the_term
         the_iterator += 1
         the_iterator += 1
-    the_approximation = the_approximation * 2 #end power expansion, start Halley's cubic convergence
+    the_nextanswer = the_answer * 2 #end power expansion, start Halley's cubic convergence
+    the_prevanswer = 666
     the_iterator = 0
-    while the_iterator < 30:
-        the_numerator = the_number - Exp(the_approximation)
-        the_denominator = the_number + Exp(the_approximation)
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
+        the_numerator = the_number - Exp(the_prevanswer)
+        the_denominator = the_number + Exp(the_prevanswer)
         the_term = 2 * the_numerator / the_denominator
-        the_approximation = the_approximation + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
-    return the_approximation
+    return the_nextanswer
  #Log with number and base
 def LOG(the_number, the_base):
     the_top = LN(the_number)
@@ -149,40 +153,46 @@ def LOG(the_number, the_base):
     return the_top / the_bottom
  #Square Root Function
 def Square_Root(the_number):
-    the_approximation = 0.5 * the_number
+    the_prevanswer = 666
+    the_nextanswer = 0.5 * the_number
     the_iterator = 1
     the_number = 1.0 * the_number
-    while the_iterator < 50:
-        the_term = the_number / the_approximation + the_approximation
-        the_approximation = 0.5 * the_term
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
+        the_term = the_number / the_prevanswer + the_prevanswer
+        the_nextanswer = 0.5 * the_term
         the_iterator += 1
-    return the_approximation
+    return the_nextanswer
  #Sine
 def Sine(the_radian):
     the_iterator = 1
-    the_answer = 0
+    the_prevanswer = 666
+    the_nextanswer = 0
     the_sign = 1
-    while the_iterator < 26:
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_radian, the_iterator) / Factorial(the_iterator)
         the_term = the_term * the_sign
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
         the_sign = the_sign * -1
-    return the_answer
+    return the_nextanswer
  #Cos
 def Cos(the_radian):
     the_iterator = 0
-    the_answer = 0
+    the_prevanswer = 666
+    the_nextanswer = 0
     the_sign = 1
-    while the_iterator < 26:
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_radian, the_iterator) / Factorial(the_iterator)
         the_term = the_term * the_sign
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
         the_sign = the_sign * -1
-    return the_answer
+    return the_nextanswer
  #Tan
 def Tan(the_radian):
     the_numerator = Sine(the_radian)
@@ -191,21 +201,25 @@ def Tan(the_radian):
  #Arctan
 def Arctan(the_number):
     the_iterator = 1
-    the_answer = 0
+    the_prevanswer = 666
+    the_nextanswer = 0
     the_sign = 1
-    while the_iterator < 200:
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_number, the_iterator) / the_iterator
         the_term = the_term * the_sign
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
         the_sign = the_sign * -1
-    return the_answer
+    return the_nextanswer
  #Arcsin
 def Arcsin(the_number):
     the_iterator = 0
-    the_answer = 0
-    while the_iterator < 80:
+    the_prevanswer = 666
+    the_nextanswer = 0
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_placeholder = 2 * the_iterator
         the_numerator = Factorial(the_placeholder)
         the_exponent = 2 * the_iterator + 1
@@ -216,9 +230,9 @@ def Arcsin(the_number):
         the_thirddenominator = 2 * the_iterator + 1
         the_denominator = the_firstdenominator * the_seconddenominator * the_thirddenominator
         the_term = the_numerator / the_denominator
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
-    return the_answer
+    return the_nextanswer
  #Arccos
 def Arccos(the_number):
     the_answer = the_pi / 2
@@ -227,23 +241,27 @@ def Arccos(the_number):
  #Sinh
 def Sinh(the_number):
     the_iterator = 1
-    the_answer = 0
-    while the_iterator < 50:
+    the_prevanswer = 666
+    the_nextanswer = 0
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
-    return the_answer
+    return the_nextanswer
  #Cosh
 def Cosh(the_number):
     the_iterator = 0
-    the_answer = 0
-    while the_iterator < 50:
+    the_prevanswer = 666
+    the_nextanswer = 0
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
-    return the_answer
+    return the_nextanswer
  #Tanh
 def Tanh(the_number):
     the_numerator = Sinh(the_number)

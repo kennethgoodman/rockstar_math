@@ -42,7 +42,7 @@ Give back The number
 
 (Is-close)
 Is Close takes the a and the b
-Put 0.000000001 into the relativetolerance (to be changed to an optional argument)
+Put 0.0000000001 into the relativetolerance (to be changed to an optional argument)
 Put 0 into the absolutetolerance (to be changed to an optional argument)
 Put Absolute Value taking the a into the largest
 If Absolute Value taking the b is greater than the largest
@@ -155,16 +155,18 @@ Give back Exp taking the argument
 
 (Exp)
 Exp takes the x
-Put 1 into the answer
+Put 666 into the prevanswer
+Put 1 into the nextanswer
 Put 1 into the iterator
-While the iterator is less than 50
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the x, the iterator into the numerator
 Put Factorial taking the iterator into the denominator
 Put the numerator over the denominator into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 
-Give back the answer
+Give back the nextanswer
 
 
 (Natural Logarithm, always base e)
@@ -173,24 +175,26 @@ Put the number minus 1 into the top
 Put the number plus 1 into the bottom
 Put the top over the bottom into the x
 Put 1 into the iterator
-Put 0 into the approximation
+Put 0 into the answer
 While the iterator is less than 10 (get reasonable starting point for Halley's method)
 Put Power taking the x, the iterator into the term
 Put the term over the iterator into the term
-Put the approximation plus the term into the approximation
+Put the answer plus the term into the answer
 Build the iterator up
 Build the iterator up
 
-Put the approximation times 2 into the approximation (end power expansion, start Halley's cubic convergence)
+Put the answer times 2 into the nextanswer (end power expansion, start Halley's cubic convergence)
+Put 666 into the prevanswer
 Put 0 into the iterator
-While the iterator is less than 30
-Put the number minus Exp taking the approximation into the numerator
-Put the number plus Exp taking the approximation into the denominator
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
+Put the number minus Exp taking the prevanswer into the numerator
+Put the number plus Exp taking the prevanswer into the denominator
 Put 2 times the numerator over the denominator into the term
-Put the approximation plus the term into the approximation
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 
-Give back the approximation
+Give back the nextanswer
 
 
 (Log with number and base)
@@ -199,49 +203,56 @@ Put LN taking the number into the top
 Put LN taking the base into the bottom
 Give back the top over the bottom
 
+
 (Square Root Function)
 Square Root takes the number
-Put 0.5 times the number into the approximation
+Put 666 into the prevanswer
+Put 0.5 times the number into the nextanswer
 Put 1 into the iterator
 Put 1.0 times the number into the number
-While the iterator is less than 50
-Put the number over the approximation plus the approximation into the term
-Put 0.5 times the term into the approximation
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
+Put the number over the prevanswer plus the prevanswer into the term
+Put 0.5 times the term into the nextanswer
 Build the iterator up
 
-Give back the approximation
+Give back the nextanswer
 
 
 (Sine)
 Sine takes the radian
 Put 1 into the iterator
-Put 0 into the answer
+Put 666 into the prevanswer
+Put 0 into the nextanswer
 Put 1 into the sign
-While the iterator is less than 26
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the radian, the iterator over Factorial taking the iterator into the term
 Put the term times the sign into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 Put the sign times -1 into the sign
 
-Give back the answer
+Give back the nextanswer
 
 
 (Cos)
 Cos takes the radian
 Put 0 into the iterator
-Put 0 into the answer
+Put 666 into the prevanswer
+Put 0 into the nextanswer
 Put 1 into the sign
-While the iterator is less than 26
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the radian, the iterator over Factorial taking the iterator into the term
 Put the term times the sign into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 Put the sign times -1 into the sign
 
-Give back the answer
+Give back the nextanswer
 
 
 (Tan)
@@ -254,24 +265,28 @@ Give back the numerator over the denominator
 (Arctan)
 Arctan takes the number
 Put 1 into the iterator
-Put 0 into the answer
+Put 666 into the prevanswer
+Put 0 into the nextanswer
 Put 1 into the sign
-While the iterator is less than 200
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the number, the iterator over the iterator into the term
 Put the term times the sign into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 Put the sign times -1 into the sign
 
-Give back the answer
+Give back the nextanswer
 
 
 (Arcsin)
 Arcsin takes the number
 Put 0 into the iterator
-Put 0 into the answer
-While the iterator is less than 80
+Put 666 into the prevanswer
+Put 0 into the nextanswer
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put 2 times the iterator into the placeholder
 Put Factorial taking the placeholder into the numerator
 Put 2 times the iterator plus 1 into the exponent
@@ -282,10 +297,10 @@ Put Power taking the placeholder, 2 into the seconddenominator
 Put 2 times the iterator plus 1 into the thirddenominator
 Put the firstdenominator times the seconddenominator times the thirddenominator into the denominator
 Put the numerator over the denominator into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 
-Give back the answer
+Give back the nextanswer
 
 
 (Arccos)
@@ -298,27 +313,31 @@ Give back the answer
 (Sinh)
 Sinh takes the number
 Put 1 into the iterator
-Put 0 into the answer
-While the iterator is less than 50
+Put 666 into the prevanswer
+Put 0 into the nextanswer
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the number, the iterator over Factorial taking the iterator into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 
-Give back the answer
+Give back the nextanswer
 
 
 (Cosh)
 Cosh takes the number
 Put 0 into the iterator
-Put 0 into the answer
-While the iterator is less than 50
+Put 666 into the prevanswer
+Put 0 into the nextanswer
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the number, the iterator over Factorial taking the iterator into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 
-Give back the answer
+Give back the nextanswer
 
 
 (Tanh)
