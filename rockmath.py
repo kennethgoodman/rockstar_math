@@ -29,7 +29,7 @@ def Absolute_Value(the_number):
     return the_number
  #Is-close
 def Is_Close(the_a, the_b):
-    the_relativetolerance = 0.000000001 #to be changed to an optional argument
+    the_relativetolerance = 0.0000000001 #to be changed to an optional argument
     the_absolutetolerance = 0 #to be changed to an optional argument
     the_largest = Absolute_Value(the_a)
     if Absolute_Value(the_b) > the_largest:

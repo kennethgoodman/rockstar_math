@@ -42,7 +42,7 @@ Give back The number
 
 (Is-close)
 Is Close takes the a and the b
-Put 0.000000001 into the relativetolerance (to be changed to an optional argument)
+Put 0.0000000001 into the relativetolerance (to be changed to an optional argument)
 Put 0 into the absolutetolerance (to be changed to an optional argument)
 Put Absolute Value taking the a into the largest
 If Absolute Value taking the b is greater than the largest
