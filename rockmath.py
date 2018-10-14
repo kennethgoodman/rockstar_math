@@ -241,23 +241,27 @@ def Arccos(the_number):
  #Sinh
 def Sinh(the_number):
     the_iterator = 1
-    the_answer = 0
-    while the_iterator < 50:
+    the_prevanswer = 666
+    the_nextanswer = 0
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
-    return the_answer
+    return the_nextanswer
  #Cosh
 def Cosh(the_number):
     the_iterator = 0
-    the_answer = 0
-    while the_iterator < 50:
+    the_prevanswer = 666
+    the_nextanswer = 0
+    while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
+        the_prevanswer = the_nextanswer
         the_term = Power(the_number, the_iterator) / Factorial(the_iterator)
-        the_answer = the_answer + the_term
+        the_nextanswer = the_prevanswer + the_term
         the_iterator += 1
         the_iterator += 1
-    return the_answer
+    return the_nextanswer
  #Tanh
 def Tanh(the_number):
     the_numerator = Sinh(the_number)

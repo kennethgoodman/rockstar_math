@@ -313,27 +313,31 @@ Give back the answer
 (Sinh)
 Sinh takes the number
 Put 1 into the iterator
-Put 0 into the answer
-While the iterator is less than 50
+Put 666 into the prevanswer
+Put 0 into the nextanswer
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the number, the iterator over Factorial taking the iterator into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 
-Give back the answer
+Give back the nextanswer
 
 
 (Cosh)
 Cosh takes the number
 Put 0 into the iterator
-Put 0 into the answer
-While the iterator is less than 50
+Put 666 into the prevanswer
+Put 0 into the nextanswer
+While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
+Put the nextanswer into the prevanswer
 Put Power taking the number, the iterator over Factorial taking the iterator into the term
-Put the answer plus the term into the answer
+Put the prevanswer plus the term into the nextanswer
 Build the iterator up
 Build the iterator up
 
-Give back the answer
+Give back the nextanswer
 
 
 (Tanh)
