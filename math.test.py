@@ -1,5 +1,5 @@
 from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, the_tau, DegToRad, RadToDeg, Mod, Gcd, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos, Sinh, Cosh, Tanh, Arcsinh, Arccosh, Arctanh
-from math import factorial as pyfactorial, log as pyln, sqrt as pysqrt, gcd, floor, ceil, sin, pi, radians, degrees, cos, tan, atan, asin, acos, sinh, cosh, tanh, asinh, acosh, atanh
+from math import isclose, factorial as pyfactorial, log as pyln, sqrt as pysqrt, gcd, floor, ceil, sin, pi, radians, degrees, cos, tan, atan, asin, acos, sinh, cosh, tanh, asinh, acosh, atanh
 import math
 
 def run_factorial_test():
@@ -8,11 +8,8 @@ def run_factorial_test():
         assert rockfactorial(i) == pyfactorial(i)
     assert rockfactorial(-1) == -1
 
-def close(x,y):
-    return abs(x - y) < 1e-10
-
 def assert_close(x, y, m=""):
-    if close(x,y):
+    if isclose(x,y, abs_tol=1e-10):
         assert True
     else:
         assert False, "py({}) is not close to rock({})-{}".format(x,y,m)
