@@ -27,6 +27,24 @@ def Absolute_Value(the_number):
         the_number = the_number * -1
         return the_number
     return the_number
+ #Is-close
+def Is_Close(the_a, the_b):
+    the_relativetolerance = 0.000000001 #to be changed to an optional argument
+    the_absolutetolerance = 0 #to be changed to an optional argument
+    the_largest = Absolute_Value(the_a)
+    if Absolute_Value(the_b) > the_largest:
+        the_largest = Absolute_Value(the_b)
+    the_scalefactor = the_relativetolerance * the_largest
+    if the_absolutetolerance > the_scalefactor:
+        the_threshold = the_absolutetolerance
+    else:
+        the_threshold = the_scalefactor
+    the_difference = the_a - the_b
+    the_difference = Absolute_Value(the_difference)
+    if the_difference <= the_threshold:
+        return True
+    else:
+        return False
  #Mod: a % m
 def Mod(the_number, the_modulo):
     if the_number > 0:
