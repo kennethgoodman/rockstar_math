@@ -155,7 +155,7 @@ Give back Exp taking the argument
 
 (Exp)
 Exp takes the x
-Put null into the prevanswer
+Put 666 into the prevanswer
 Put 1 into the nextanswer
 Put 1 into the iterator
 While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
@@ -184,7 +184,7 @@ Build the iterator up
 Build the iterator up
 
 Put the answer times 2 into the nextanswer (end power expansion, start Halley's cubic convergence)
-Put null into the prevanswer
+Put 666 into the prevanswer
 Put 0 into the iterator
 While the iterator is less than 2000 and Is Close taking the prevanswer, the nextanswer is false
 Put the nextanswer into the prevanswer
@@ -206,7 +206,7 @@ Give back the top over the bottom
 
 (Square Root Function)
 Square Root takes the number
-Put null into the prevanswer
+Put 666 into the prevanswer
 Put 0.5 times the number into the nextanswer
 Put 1 into the iterator
 Put 1.0 times the number into the number

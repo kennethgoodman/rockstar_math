@@ -111,7 +111,7 @@ def PowerRealExponent(the_base, the_exponent):
     return Exp(the_argument)
  #Exp
 def Exp(the_x):
-    the_prevanswer = False
+    the_prevanswer = 666
     the_nextanswer = 1
     the_iterator = 1
     while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
@@ -136,7 +136,7 @@ def LN(the_number):
         the_iterator += 1
         the_iterator += 1
     the_nextanswer = the_answer * 2 #end power expansion, start Halley's cubic convergence
-    the_prevanswer = False
+    the_prevanswer = 666
     the_iterator = 0
     while the_iterator < 2000 and Is_Close(the_prevanswer, the_nextanswer) == False:
         the_prevanswer = the_nextanswer
@@ -153,7 +153,7 @@ def LOG(the_number, the_base):
     return the_top / the_bottom
  #Square Root Function
 def Square_Root(the_number):
-    the_prevanswer = False
+    the_prevanswer = 666
     the_nextanswer = 0.5 * the_number
     the_iterator = 1
     the_number = 1.0 * the_number
