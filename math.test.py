@@ -1,4 +1,4 @@
-from rockmath import Factorial as rockfactorial, Power, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, the_tau, DegToRad, RadToDeg, Mod, Gcd, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos, Sinh, Cosh, Tanh, Arcsinh, Arccosh, Arctanh
+from rockmath import Factorial as rockfactorial, Power, PowerIntegerExponent, LN as rockln, Square_Root as rocksqrt, Absolute_Value, the_e, the_pi, the_tau, DegToRad, RadToDeg, Mod, Gcd, LOG as rocklog, Exp, Floor, Ceil, Sine, Cos, Tan, Arctan, Arcsin, Arccos, Sinh, Cosh, Tanh, Arcsinh, Arccosh, Arctanh
 from math import isclose, factorial as pyfactorial, log as pyln, sqrt as pysqrt, gcd, floor, ceil, sin, pi, radians, degrees, cos, tan, atan, asin, acos, sinh, cosh, tanh, asinh, acosh, atanh
 import math
 
@@ -12,17 +12,20 @@ def assert_close(x, y, m=""):
     if isclose(x,y, abs_tol=1e-10):
         assert True
     else:
-        assert False, "py({}) is not close to rock({})-{}".format(x,y,m)
+        assert False, "py({}) is not close to rock({}){}".format(x,y,("\n"+m) if m else "")
 
 def run_power_test():
     for x in range(-10, 10):
         for n in [-10, -pi, -2.5, -2, -1, -0.15, 0, 0.15, 1, 2, 2.5, pi, 10]:
-            if x == 0 and n <= 0: # indefinite answer
+            if x == 0 and n < 0: # indefinite answer
                 continue
             if x<0 and n%1!=0: # roots of negative numbers make complex numbers
                 continue
             print("testing {}**{}".format(x,n))
             assert_close(x**n, Power(x,n), "Failed for {}**{}".format(x,n))
+            if n%1 == 0 and n >= 0: # allowed to test the (positive) integer exponent power function
+                print("testing {}**int({})".format(x,n))
+                assert_close(x**n, PowerIntegerExponent(x,n), "Failed for {}**int({})".format(x,n))
 
 def run_sqrt_test():
     for x in range(1, 100):
