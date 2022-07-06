@@ -121,9 +121,6 @@ If the exponent is less than 0
 Put -1 times the exponent into the newexponent
 Give back 1 over Power taking the base, the newexponent
 
-(If the base is 0 and  the exponent is 0)
-(Give back "Error: indefinite")
-()
 If the exponent is 0
 Give back 1
 
@@ -136,10 +133,10 @@ Else
 Give back PowerRealExponent taking the base, the exponent
 
 
-(PowerIntegerExponent)
+(PowerIntegerExponent: should rather be named PowerPositiveIntegerExponent)
 PowerIntegerExponent takes the base and the exponent
-Put 1 into the iterator
-Put the base into the answer
+Put 0 into the iterator
+Put the 1 into the answer
 While the iterator is smaller than the exponent (Probably can also use divide and conquer exponentiation -> e^n + e^m + ....)
 Put the base times the answer into the answer
 Build the iterator up

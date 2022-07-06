@@ -86,9 +86,6 @@ def Power(the_base, the_exponent):
     if the_exponent < 0:
         the_newexponent = -1 * the_exponent
         return 1 / Power(the_base, the_newexponent)
-     #If the base is 0 and  the exponent is 0
-     #Give back "Error: indefinite"
-     #
     if the_exponent == 0:
         return 1
     if the_base == 0:
@@ -97,10 +94,10 @@ def Power(the_base, the_exponent):
         return PowerIntegerExponent(the_base, the_exponent)
     else:
         return PowerRealExponent(the_base, the_exponent)
- #PowerIntegerExponent
+ #PowerIntegerExponent: should rather be named PowerPositiveIntegerExponent
 def PowerIntegerExponent(the_base, the_exponent):
-    the_iterator = 1
-    the_answer = the_base
+    the_iterator = 0
+    the_answer = 1
     while the_iterator < the_exponent: #Probably can also use divide and conquer exponentiation -> e^n + e^m + ....
         the_answer = the_base * the_answer
         the_iterator += 1
